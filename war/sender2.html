@@ -1,0 +1,482 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ 
+ <!-- ����� ����� �� �������� ������� -->
+  <style>
+html, body {
+    margin:0 auto;
+    width:1000px;
+	height:550px;
+	background:#E9E7E3;
+}  
+
+/* tab styles */
+#tabrow {
+min-width:800px;
+font-size:16px;
+letter-spacing:0.3pt;
+line-height:1;
+height:30px;
+font-family: Trebuchet MS, sans-serif;
+text-transform: capitalize;
+text-align:center;
+margin:auto;
+padding:auto;
+vertical-align:middle;
+position:relative;
+}
+
+#tabrow ul {
+  margin:0;
+  padding:0;
+  list-style:none;
+  z-index:2;
+  position:relative;
+  margin-right:auto;
+  margin-left:auto;
+  text-align:center;
+  padding:0px;
+  vertical-align:middle;
+  position:relative;
+}
+
+#tabrow li {
+  float:left;
+  background-color:#494949;
+  color:#a6a49d;
+  margin-right:2px;
+  padding:5px;
+  cursor:pointer;
+  text-align:center;
+  height:20px;
+  width:172px;
+  padding:auto;
+  vertical-align:middle;
+  position:relative;
+  float: left; 
+}
+
+#tabrow li.select {
+  background-color:#bf3f3e;
+  color:#ffffff;
+  height:20px;
+  width:172px;
+  padding:auto;
+  vertical-align:middle;
+  position:relative;
+  
+}
+#tabrow li.select:after{ 
+content:'';
+display:block;
+position:absolute;
+top:100%; 
+left:80px;
+width:0;
+height:0;
+border-color: #bf3f3e transparent transparent transparent; 
+border-style: solid;
+border-width: 10px;
+}
+
+/* page styles */
+#topbox{,
+   margin: 0 auto;
+   width:97%;
+}
+#topbox {
+  background-color:#FFF1C7;
+  border: solid #C36618 1px;
+  margin-bottom:2em;
+}
+#midbox {
+  width:100%;
+  height:255px;
+  margin-top: 17px;
+  background-color:#494949;
+  overflow: auto;
+  scrollbar-base-color: #bf3f3e;
+  scrollbar-arrow-color: #000000;
+  position: absolute;
+}
+#midbox p {
+  margin:0;
+}
+h1 {
+  font-size:x-large;
+  color:#d18846;
+}
+h2 {
+  color:#000;
+  font-size:large;
+  font-family: Trebuchet MS, sans-serif;;
+}
+h1, #topbox h2 {
+  margin:0 15pt;
+  padding: 5pt 0;
+}
+
+div.subpage {
+	padding:1em;
+}
+
+.title{
+font-family: Trebuchet MS, sans-serif;
+font-size: 34px;
+color: #ffffff;
+}
+
+#footer {
+	padding: 17px 0px 30px 0px;
+	position: relative;
+    bottom:0;
+    height:60px;   /* Height of the footer */
+}
+#footer p {
+    padding: 0px 0px 0px 50px;
+	text-align: left;
+	font-size: 10px;
+	font-family: Trebuchet MS, sans-serif;
+}
+#footer a {
+	margin-left:10px;
+}
+
+img.middle {vertical-align:-10px;}
+img.middle2{vertical-align:-2px;}
+
+#back {
+    padding:45px 0px 32px 0px;
+	}
+
+#back p:active{
+position:relative;
+top: 1px;
+left: 1px;
+}
+
+#back p.p1{
+    float:left;
+    position:relative;
+	margin:0px -50px 0px 878px;
+	font-size: 16px;
+	font-family: Trebuchet MS, sans-serif;
+	text-transform: capitalize;
+}
+
+#back p.p2{
+    float:right;
+	position:relative;
+	margin:0px -22px 0px 0px;
+	font-size: 16px;
+	font-family: Trebuchet MS, sans-serif;
+	text-transform: capitalize;
+}
+
+#back a {
+	margin-left:15px;
+	cursor: pointer;
+}
+
+#back b.b1 {
+	margin-left:15px;
+	cursor: pointer;
+}
+
+#back b.b2 {
+	margin-right:15px;
+	cursor: pointer;
+}
+
+
+#tab0 {
+	margin-top:15px;
+	margin-left:191px;
+}
+#tab1 {
+	margin-top:15px;
+}
+
+img.floatLeft { 
+position:absolute;
+margin:40px 0px 0px 40px;
+}
+
+#buttons{
+background: url('graphics/LeftNameBar.png'), url('graphics/RightNameBar.png');
+background-size:500px 100px;
+width:75%;
+height:345px;
+padding: 10px 0px 0px 0px;
+margin-left:270px;
+margin-right:auto;
+vertical-align:center;
+position:relative;
+}
+
+.find_out {
+  font-family: Trebuchet MS, sans-serif;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 0px;
+  text-transform: capitalize;
+  text-align: top;
+  text-decoration: none;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-box-shadow: 1px 1px 3px #000000;
+  -moz-box-shadow: 1px 1px 3px #000000;
+  text-shadow: 0px 0px 0px #000000;
+  border: solid #003366 0px;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#bf3f3e), to(#b53837));
+  background: -moz-linear-gradient(top, #bf3f3e, #b53837);
+  height:39px;
+  width:170px;
+  font-weight: bold;
+  vertical-align:right;
+  float: right; 
+  position:relative;
+  margin: 25px 10px 0px 0px;
+  cursor: pointer;
+  box-shadow:2px 2px 3px #0D0000;
+}
+.find_out:active {
+position: relative;
+top: 1px;
+left: 1px;
+padding: 1px;
+}
+c {
+ font-family: Trebuchet MS, sans-serif;
+ color: #ffffff;
+ font-size: 18px;
+ vertical-align:50px;
+ margin-left: 30px;
+ 
+}
+d {
+ font-family: Trebuchet MS, sans-serif;
+ color: #ffcd8b;
+ font-size: 18px;
+ vertical-align:50px;
+ margin-left: 130px;
+}
+
+f {
+ font-family: Trebuchet MS, sans-serif;
+ color: #bf3f3e  ;
+ font-size: 20px;
+}
+
+g {
+ margin-left:269px;
+ font-family: Trebuchet MS, sans-serif;
+ color: #494949 ;
+ font-size: 20px;
+}
+ </style>
+ 
+<script type="text/javascript" src="source1.html"> </script>
+<script type="text/javascript">
+var selectedTab = 0;
+
+function tabclick(n) {
+  if (n === selectedTab) return; // nothing to do.
+  var li = document.getElementById('tab' + selectedTab);
+  curvyCorners.adjust(li, 'className', ''); // Remove the 'select' style
+  li = document.getElementById('page' + selectedTab);
+  li.style.display = 'none';                // hide the currently selected sub-page
+  li = document.getElementById('page' + n);
+  li.style.display = 'block';               // show the new sub-page
+  li = document.getElementById('tab' + n);  // get the new (clicked) tab
+  curvyCorners.adjust(li, 'className', 'select'); // and update its style
+  curvyCorners.redraw();        // Redraw all elements with className curvyRedraw
+  selectedTab = n;              // store for future reference
+}
+</script>
+
+
+
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+ </head>
+
+<body bgcolor="#E9E7E3">
+	<div id="back">
+	<p class="p1" id="back_btn"><a><img  class="middle2" SRC="graphics/arrow.png"><b class="b1">Back To Main</b></a></p>
+   </div>
+   <div id="title">
+   <img class="floatLeft" SRC="graphics/Logo_internalPages.png">
+   </div>
+
+    <div id="buttons">
+		<CENTER><div><span class="title">Check your games status!</span></div></CENTER>
+		<div id="tabrow">
+		<ul>
+		<li id="tab0" onclick="tabclick(0);" class="select curvyRedraw">Received Games</li>
+		<li id="tab1" onclick="tabclick(1);" class="curvyRedraw">Finished games</li>
+		</ul>
+		</div>
+	
+		<div id="midbox" class="curvyRedraw">
+		<div id="page0" class="subpage">
+		</div>
+		<div id="page1" class="subpage" style="display:none">
+		</div>
+		</div>
+	</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+   <script>
+    $(document).ready(function(){
+		var prmstr = window.location.search.substr(1);
+		var prmarr = prmstr.split ("&");
+		var params = {};
+
+		for ( var i = 0; i < prmarr.length; i++) {
+			var tmparr = prmarr[i].split("=");
+			params[tmparr[0]] = tmparr[1];
+		}
+		var token = params.token;
+		$.ajax({
+    	    type: "GET",
+    	    url: "show_score",
+    	    data: {
+    	    	sessionToken: token,
+    	         },
+    	    success: function(data){
+				$("#item_counter").append('<f>' + data + '</f>');
+    	    }
+		});
+
+		$.ajax({
+    	    type: "GET",
+    	    url: "received_games",
+    	    data: {
+    	    	sessionToken: token,
+    	         },
+    	    success: function(data){
+    	    	var games = data.split(","); 
+    	    	for (var j = 0; j < games.length-1; j++) {
+  					$.ajax({
+        	    	    type: "GET",
+        	    	    url: "receivers_images",
+        	    	    data: {
+        	    	    	sessionToken: token,
+        	    	    	Game: games[j]
+        	    	         },
+        	    	    success: function(data){
+        	    	    	var params = data.split("|||");
+        	    	    	var arr = JSON.parse(params[0]);
+        	    	    	
+        	    	    	var sort_by = function(field, reverse, primer){
+        						   var key = function (x) {return primer ? primer(x[field]) : x[field]};
+
+        						   return function (a,b) {
+        							  var A = key(a), B = key(b);
+        							  return ( (A < B) ? -1 : ((A > B) ? 1 : 0) ) * [-1,1][+!!reverse];                  
+        						   }
+        						}
+        					
+        					arr.sort(sort_by('name', true, function(a){return a.toUpperCase()}));
+        					
+        	    	    	for ( var i = 0; i < arr.length; i++) {
+        	    	    		if(typeof arr[i].imageUrl === "undefined"){
+        							var img = $('<img/>', {src:"graphics/user.png", height:"100" ,width:"100" });
+        						}
+        						else {
+        							if (arr[i].imageUrl.substring(0,2)==="//"){
+        								var img = $('<img/>', {src:"graphics/user.png", height:"100" ,width:"100" });
+        							}
+        							else{
+        								var img = $('<img/>', {src:arr[i].imageUrl, height:"100" ,width:"100"});
+        							}
+        						}	
+        	    	    		$("#page0").append(img);
+    							$("#page0").append('<c>' + 'How well do you know ' + arr[i].name + '?' +'</c>');
+    							var button = $("<button>Find out</button>");
+    							button.addClass("find_out");
+    							button.attr("name",params[1]);
+    							$("#page0").append(button);
+    							$("#page0").append('<br>');
+        	    	    	}
+        	    	    }
+        	    	    
+        	    	});
+    	    	}
+    	    }
+		});
+		$.ajax({
+    	    type: "GET",
+    	    url: "show_finished_games",
+    	    data: {
+    	    	sessionToken: token,
+    	         },
+    	    success: function(data){
+    	    	//alert(data);
+    	    	var games = data.split(","); 
+    	    	for (var j = 0; j < games.length-1; j++) {
+  					$.ajax({
+        	    	    type: "GET",
+        	    	    url: "senders_images",
+        	    	    data: {
+        	    	    	sessionToken: token,
+        	    	    	Game: games[j]
+        	    	         },
+        	    	    success: function(data){
+        	    	    	var params = data.split("|||");
+							//alert(data);
+        	    	    	var arr = JSON.parse(params[0]);
+        	    	    	
+        	    	    	var sort_by = function(field, reverse, primer){
+        						   var key = function (x) {return primer ? primer(x[field]) : x[field]};
+
+        						   return function (a,b) {
+        							  var A = key(a), B = key(b);
+        							  return ( (A < B) ? -1 : ((A > B) ? 1 : 0) ) * [-1,1][+!!reverse];                  
+        						   }
+        						}
+        					
+        					arr.sort(sort_by('name', true, function(a){return a.toUpperCase()}));
+        					
+        	    	    	for ( var i = 0; i < arr.length; i++) {
+        	    	    		if(typeof arr[i].imageUrl === "undefined"){
+        							var img = $('<img/>', {src:"graphics/user.png", height:"100" ,width:"100" });
+        						}
+        						else {
+        							if (arr[i].imageUrl.substring(0,2)==="//"){
+        								var img = $('<img/>', {src:"graphics/user.png", height:"100" ,width:"100" });
+        							}
+        							else{
+        								var img = $('<img/>', {src:arr[i].imageUrl, height:"100" ,width:"100"});
+        							}
+        						}	
+        	    	    		$("#page1").append(img);
+    							$("#page1").append('<c>' + 'How well '+ arr[i].name + ' knows me ?' + '</c>');
+    							$("#page1").append('<d>' + 'Score: ' + params[2] + '</d>');
+    							$("#page1").append('<br>');
+								//$('#item_counter').append();
+        	    	    	}
+        	    	    }
+        	    	    
+        	    	});
+    	    	}
+    	    	}
+    		});
+		$('.find_out').live('click', function(){
+			var game_chosen = $(this).attr("name");
+			//alert(game_chosen);
+			window.location = "sender4.html?game_chosen="+ game_chosen + "&token=" + token;
+    		});
+		$("#back_btn").click(function () { 
+			window.location = "sender1.html?token=" + token;
+			});
+     });
+   </script>
+   <br>
+        <g > Your total score so far: </g> <f id="item_counter"> </f>
+ 	<div id="footer">
+	<p><img class="middle" SRC="graphics/FooterLogo.png"> <a>Who knows me better 2012 - All rights reserved 2012</a></p>
+	</div>
+  </body>
+  </html>

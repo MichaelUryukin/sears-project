@@ -1,0 +1,429 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ 
+<style>
+html, body {
+    margin:0 auto;
+    width:1000px;
+	height:550px;
+	background:#E9E7E3;
+}  
+
+/* tab styles */
+#tabrow {
+min-width:800px;
+font-size:16px;
+letter-spacing:0.3pt;
+line-height:1;
+height:30px;
+font-family: Trebuchet MS, sans-serif;
+text-transform: capitalize;
+text-align:center;
+margin:auto;
+padding:auto;
+vertical-align:middle;
+position:relative;
+}
+
+#tabrow ul {
+  margin:0;
+  padding:0;
+  list-style:none;
+  z-index:2;
+  position:relative;
+  margin-right:auto;
+  margin-left:auto;
+  text-align:center;
+  padding:0px;
+  vertical-align:middle;
+  position:relative;
+}
+
+#tabrow li {
+  float:left;
+  background-color:#494949;
+  color:#a6a49d;
+  margin-right:2px;
+  padding:5px;
+  cursor:pointer;
+  text-align:center;
+  height:20px;
+  width:172px;
+  padding:auto;
+  vertical-align:middle;
+  position:relative;
+  float: left; 
+}
+
+#tabrow li.select {
+  background-color:#bf3f3e;
+  color:#ffffff;
+  height:20px;
+  width:172px;
+  padding:auto;
+  vertical-align:middle;
+  position:relative;
+  
+}
+#tabrow li.select:after{ 
+content:'';
+display:block;
+position:absolute;
+top:100%; 
+left:80px;
+width:0;
+height:0;
+border-color: #bf3f3e transparent transparent transparent; 
+border-style: solid;
+border-width: 10px;
+}
+
+/* page styles */
+#topbox{,
+   margin: 0 auto;
+   width:97%;
+}
+#topbox {
+  background-color:#FFF1C7;
+  border: solid #C36618 1px;
+  margin-bottom:2em;
+}
+#midbox {
+  width:100%;
+  height:255px;
+  margin-top: 16px;
+  background-color:#494949;
+  overflow: auto;
+  scrollbar-base-color: #bf3f3e;
+  scrollbar-arrow-color: #000000;
+  position: absolute;
+}
+#midbox p {
+  margin:0;
+}
+h1 {
+  font-size:x-large;
+  color:#d18846;
+}
+h2 {
+  color:#000;
+  font-size:large;
+  font-family: Trebuchet MS, sans-serif;;
+}
+h1, #topbox h2 {
+  margin:0 15pt;
+  padding: 5pt 0;
+}
+
+div.subpage {
+	padding-top:0.9em;
+	padding-left:2.8em;
+}
+
+#footer {
+	padding: 17px 0px 30px 0px;
+	position: relative;
+    bottom:0;
+    height:60px;   /* Height of the footer */
+}
+#footer p {
+    padding: 0px 0px 0px 50px;
+	text-align: left;
+	font-size: 10px;
+	font-family: Trebuchet MS, sans-serif;
+}
+#footer a {
+	margin-left:10px;
+}
+
+img.middle {vertical-align:-10px;}
+img.middle2{vertical-align:-2px;}
+
+#back {
+    padding:45px 0px 32px 0px;
+	}
+
+#back p:active{
+position: relative;
+top: 1px;
+left: 1px;
+}
+
+#back p.p1{
+    float:left;
+    position:relative;
+	margin:0px 0px 0px 255px;
+	font-size: 16px;
+	font-family: Trebuchet MS, sans-serif;
+	text-transform: capitalize;
+}
+
+#back p.p2{
+    float:right;
+	position:relative;
+	margin:0px -20px 0px 0px;
+	font-size: 16px;
+	font-family: Trebuchet MS, sans-serif;
+	text-transform: capitalize;
+}
+
+#back a {
+	margin-left:15px;
+	cursor: pointer;
+}
+
+#back b.b1 {
+	margin-left:15px;
+	cursor: pointer;
+}
+
+#back b.b2 {
+	margin-right:15px;
+	cursor: pointer;
+}
+
+
+#tab0 {
+	margin-top:20px;
+	margin-left:160px;
+}
+#tab1 {
+	margin-top:20px;
+}
+
+img.floatLeft { 
+position:absolute;
+margin:40px 0px 0px 40px;
+}
+
+#buttons{
+background: url('graphics/LeftNameBar.png'), url('graphics/RightNameBar.png');
+background-size:500px 100px;
+width:75%;
+height:345px;
+padding: 10px 0px 0px 0px;
+margin-left:270px;
+margin-right:auto;
+vertical-align:center;
+position:relative;
+}
+
+.images {
+margin : 5px;
+cursor:pointer;
+}
+
+#pop-up {
+display: none;
+  margin-left: 10px;
+  position: absolute;
+  width: 65px;
+  height: 42px;
+  padding: 10px;
+  background: #bf3f3e;
+  border: 1px solid #bf3f3e;
+  cursor: pointer;
+}
+#pop-up:after{ 
+content:'';
+display:block;
+position:absolute;
+top:10%; 
+left:-11px;
+border-color: transparent #bf3f3e ;
+border-style: solid;
+border-width: 10px 10px 10px 0px;
+height: 0px;
+width: 0px;
+}
+e {
+ font-family: Trebuchet MS, sans-serif;
+ color: white ;
+ font-size: 17px;
+}
+
+f {
+ font-family: Trebuchet MS, sans-serif;
+ color: #505050  ;
+ font-size: 20px;
+}
+g {
+ margin-left:269px;
+ font-family: Trebuchet MS, sans-serif;
+ color: #bf3f3e ;
+ font-size: 20px;
+}
+
+.title2{
+font-family: Trebuchet MS, sans-serif;
+font-size: 24px;
+color: #ffffff;
+}
+
+.title{
+font-family: Trebuchet MS, sans-serif;
+font-size: 34px;
+color: #ffffff;
+padding-bottom:2px;
+}
+</style>
+
+<script type="text/javascript" src="source1.html"> </script>
+<script type="text/javascript">
+var selectedTab = 0;
+
+function tabclick(n) {
+  if (n === selectedTab) return; // nothing to do.
+  var li = document.getElementById('tab' + selectedTab);
+  curvyCorners.adjust(li, 'className', ''); // Remove the 'select' style
+  li = document.getElementById('page' + selectedTab);
+  li.style.display = 'none';                // hide the currently selected sub-page
+  li = document.getElementById('page' + n);
+  li.style.display = 'block';               // show the new sub-page
+  li = document.getElementById('tab' + n);  // get the new (clicked) tab
+  curvyCorners.adjust(li, 'className', 'select'); // and update its style
+  curvyCorners.redraw();        // Redraw all elements with className curvyRedraw
+  selectedTab = n;              // store for future reference
+}
+</script>
+
+
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+ </head>
+
+<body>
+	<div id="back">
+	<p class="p1" id="back_btn"><a><img  class="middle2" SRC="graphics/arrow.png"><b class="b1">Back To Main</b></a></p>
+    <p class="p2" id="next_btn"><a><b class="b2">check your answers</b><img  class="middle2" SRC="graphics/arrow2.png"></a></p>
+   </div>
+   <div>
+   <img class="floatLeft" SRC="graphics/Logo_internalPages.png">
+   </div>
+   
+    <div id="buttons">
+		<CENTER><div class="title"><span>How well do you know your friend?</span></div></CENTER>
+	    <CENTER><div><span class="title2">Select 5 products that you think your friend likes</span></div></CENTER>
+		<div id="midbox" class="curvyRedraw">
+		<div id="page0" class="subpage">
+		</div>
+		</div>
+	</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+   <script>
+     $(document).ready(function(){
+	    var prmstr = window.location.search.substr(1);
+		var prmarr = prmstr.split ("&");
+		var params = {};
+
+		for ( var i = 0; i < prmarr.length; i++) {
+			var tmparr = prmarr[i].split("=");
+			params[tmparr[0]] = tmparr[1];
+		}
+		var token = params.token;
+		var game_chosen = params.game_chosen;
+		$.ajax({
+    	    type: "GET",
+    	    url: "products_guess",
+    	    data: {
+    	    	 sessionToken: token,
+    	    	 game_chosen: game_chosen
+    	         },
+    	    success: function(data){
+    	    	//alert(data);  
+    	    	$.ajax({
+		    	    type: "GET",
+		    	    url: "product_images",
+		    	    data: {
+		    	    	sessionToken: token,
+		    	    	prod_string: data
+		    	         },
+		    	    success: function(data){
+		    	    	var arr1 = JSON.parse(data);
+						for ( var k = 0; k < arr1.length; k++) {
+							var img = $('<img/>', {src:arr1[k].imageUrl, height:"100" ,width:"100", "name": arr1[k].id, "url":arr1[k].productUrl});
+							img.addClass("images");
+							img.attr("status","Choose");
+							$("#page0").append(img);
+							}
+						}
+		    		});
+				}
+    		});
+		var num_of_clicks = 0;
+		var products_chosen = "";
+		$('.images').live('click', function(){ 
+			var id_product = $(this).attr("name");
+			if ($(this).attr("status")=="Choose"){
+				if (num_of_clicks < 5) {
+					$(this).attr("status","Choosed");
+					products_chosen = products_chosen + id_product + ",";
+					num_of_clicks = num_of_clicks + 1;
+					$('#item_counter').html(num_of_clicks);
+					$(this).css('border', "solid 6px #bf3f3e");
+					$(this).css('height', "88");
+					$(this).css('width', "88");
+
+				}
+				else {
+					alert("You can select only 5 products");
+				}
+			}
+			else {
+    			$(this).attr("status","Choose");
+				products_chosen=products_chosen.replace(id_product+",","");
+				num_of_clicks = num_of_clicks - 1;
+				$('#item_counter').html(num_of_clicks);
+				$(this).css('border', "solid 0px #bf3f3e");
+				$(this).css('height', "100");
+				$(this).css('width', "100");
+
+				//alert(products_chosen);
+    		}
+		});
+		
+		var prod_url = "";
+		$('.images').live('hover', function(e){ 
+			var img = $(this)
+			prod_url = img.attr("url")
+			var xPos = img.offset().left + img.width();
+			var yPos = img.offset().top;
+		    $('#pop-up').show()
+				.css('top', yPos)
+			    .css('left',xPos)
+		        .appendTo('body');
+		  });
+
+		$("#next_btn").click(function () { 
+			if (num_of_clicks == 5){
+				window.location = "sender6.html?game_chosen="+game_chosen + "&token=" + token + "&products_chosen=" + products_chosen;
+			}
+			else {
+				alert("Please select 5 products");
+			}
+			});
+		$("#back_btn").click(function () { 
+			window.location = "sender1.html?token=" + token;
+			});
+		$("#pop-up").live('click', function(){ 
+			window.open('http://galileo.shopyourway.com' + prod_url);
+			});
+					
+		$('#pop-up').mouseleave(function() {
+			 $('#pop-up').hide();
+			});
+     });
+   </script>
+  <div id="pop-up">
+     <center><e>More details</e></center>
+   </div> 
+   <br>
+    <g id="item_counter">0 </g><f>  Of 5 Selected</f>
+</body>
+	<div id="footer">
+	<p><img class="middle" SRC="graphics/FooterLogo.png"> <a>Who knows me better 2012 - All rights reserved 2012</a></p>
+	</div>
+</html>
+
+

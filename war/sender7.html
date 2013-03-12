@@ -1,0 +1,462 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ 
+ <!-- ����� ����� �� �������� ������� -->
+  <style>
+html, body {
+    margin:0 auto;
+	height:550px;
+    width:1000px;
+	background:#E9E7E3;
+}  
+
+/* tab styles */
+#tabrow {
+min-width:800px;
+font-size:16px;
+letter-spacing:0.3pt;
+line-height:1;
+height:30px;
+font-family: Trebuchet MS, sans-serif;
+text-transform: capitalize;
+text-align:center;
+margin:auto;
+padding:auto;
+vertical-align:middle;
+position:relative;
+}
+
+#tabrow ul {
+  margin:0;
+  padding:0;
+  list-style:none;
+  z-index:2;
+  position:relative;
+  margin-right:auto;
+  margin-left:auto;
+  text-align:center;
+  padding:0px;
+  vertical-align:middle;
+  position:relative;
+}
+
+#tabrow li {
+  float:left;
+  background-color:#494949;
+  color:#a6a49d;
+  margin-right:2px;
+  padding:5px;
+  cursor:pointer;
+  text-align:center;
+  height:20px;
+  width:172px;
+  padding:auto;
+  vertical-align:middle;
+  position:relative;
+  float: left; 
+}
+
+#tabrow li.select {
+  background-color:#bf3f3e;
+  color:#ffffff;
+  height:20px;
+  width:172px;
+  padding:auto;
+  vertical-align:middle;
+  position:relative;
+  
+}
+#tabrow li.select:after{ 
+content:'';
+display:block;
+position:absolute;
+top:100%; 
+left:80px;
+width:0;
+height:0;
+border-color: #bf3f3e transparent transparent transparent; 
+border-style: solid;
+border-width: 10px;
+}
+
+/* page styles */
+#topbox{,
+   margin: 0 auto;
+   width:97%;
+}
+#topbox {
+  background-color:#FFF1C7;
+  border: solid #C36618 1px;
+  margin-bottom:2em;
+}
+#midbox {
+  width:100%;
+  height:255px;
+  margin-top: 17px;
+  background-color:#494949;
+  overflow: auto;
+  scrollbar-base-color: #bf3f3e;
+  scrollbar-arrow-color: #000000;
+  position: absolute;
+}
+#midbox p {
+  margin:0;
+}
+h1 {
+  font-size:x-large;
+  color:#d18846;
+}
+h2 {
+  color:#000;
+  font-size:large;
+  font-family:Arial, Helvetica, sans-serif;
+}
+h1, #topbox h2 {
+  margin:0 15pt;
+  padding: 5pt 0;
+}
+
+div.subpage {
+	padding-top:0.9em;
+	padding-left:2.8em;
+}
+
+.title{
+font-family: Trebuchet MS, sans-serif;
+font-size: 34px;
+color: #ffffff;
+}
+
+#footer {
+	padding: 17px 0px 30px 0px;
+	position: relative;
+    bottom:0;
+    height:60px;   /* Height of the footer */
+}
+#footer p {
+    padding: 0px 0px 0px 50px;
+	text-align: left;
+	font-size: 10px;
+	font-family: Trebuchet MS, sans-serif;
+}
+#footer a {
+	margin-left:10px;
+}
+
+img.middle {vertical-align:-10px;}
+img.middle2{vertical-align:-2px;}
+
+#back {
+    padding:45px 0px 32px 0px;
+	}
+
+#back p:active{
+position: relative;
+top: 1px;
+left: 1px;
+}
+
+#back p.p1{
+    float:left;
+    position:relative;
+	margin:0px 0px 0px 255px;
+	font-size: 16px;
+	font-family: Trebuchet MS, sans-serif;
+	text-transform: capitalize;
+}
+
+#back p.p2{
+    float:right;
+	position:relative;
+	margin:0px -20px 0px 0px;
+	font-size: 16px;
+	font-family: Trebuchet MS, sans-serif;
+	text-transform: capitalize;
+}
+
+#back a {
+	margin-left:15px;
+	cursor: pointer;
+}
+
+#back b.b1 {
+	margin-left:15px;
+	cursor: pointer;
+}
+
+#back b.b2 {
+	margin-right:15px;
+	cursor: pointer;
+}
+
+#tab0 {
+	margin-top:15px;
+	margin-left:100px;
+}
+#tab1 {
+	margin-top:15px;
+}
+#tab2 {
+	margin-top:15px;
+}
+
+img.floatLeft { 
+position:absolute;
+margin:40px 0px 0px 40px;
+}
+
+#buttons{
+background: url('graphics/LeftNameBar.png'), url('graphics/RightNameBar.png');
+background-size:500px 100px;
+width:75%;
+height:345px;
+padding: 10px 0px 0px 0px;
+margin-left:270px;
+margin-right:auto;
+vertical-align:center;
+position:relative;
+}
+.images {
+margin : 5px;
+cursor:pointer;
+}
+
+f {
+ font-family: Trebuchet MS, sans-serif;
+ color: #505050  ;
+ font-size: 20px;
+}
+g {
+ margin-left:269px;
+ font-family: Trebuchet MS, sans-serif;
+ color: #bf3f3e ;
+ font-size: 20px;
+}
+ </style>
+ 
+<script type="text/javascript" src="source1.html"> </script>
+<script type="text/javascript">
+var selectedTab = 0;
+
+function tabclick(n) {
+  if (n === selectedTab) return; // nothing to do.
+  var li = document.getElementById('tab' + selectedTab);
+  curvyCorners.adjust(li, 'className', ''); // Remove the 'select' style
+  li = document.getElementById('page' + selectedTab);
+  li.style.display = 'none';                // hide the currently selected sub-page
+  li = document.getElementById('page' + n);
+  li.style.display = 'block';               // show the new sub-page
+  li = document.getElementById('tab' + n);  // get the new (clicked) tab
+  curvyCorners.adjust(li, 'className', 'select'); // and update its style
+  curvyCorners.redraw();        // Redraw all elements with className curvyRedraw
+  selectedTab = n;              // store for future reference
+}
+</script>
+
+
+
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+ </head>
+
+<body bgcolor="#E9E7E3">
+	<div id="back">
+	<p class="p1" id="back_btn"><a><img  class="middle2" SRC="graphics/arrow.png"><b class="b1">Back To Main</b></a></p>
+    <p class="p2" id="next_btn"><a><b class="b2">send your game</b><img  class="middle2" SRC="graphics/arrow2.png"></a></p>
+   </div>
+   <div id="title">
+   <img class="floatLeft" SRC="graphics/Logo_internalPages.png">
+   </div>
+
+    <div id="buttons">
+		<CENTER><div><span class="title">Stage 2: Pick 5 products for your friends</span></div></CENTER>
+		<div id="tabrow">
+		<ul>
+		<li id="tab0" onclick="tabclick(0);" class="select curvyRedraw">My Wish List</li>
+		<li id="tab1" onclick="tabclick(1);" class="curvyRedraw">My Things</li>
+		<li id="tab2" onclick="tabclick(2);" class="curvyRedraw">Things I like</li>
+		</ul>
+		</div>
+	
+		<div id="midbox" class="curvyRedraw">
+		<div id="page0" class="subpage">
+		</div>
+		<div id="page1" class="subpage" style="display:none">
+		</div>
+		<div id="page2" class="subpage" style="display:none">
+		</div>
+		</div>
+	</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+   <script>
+     $(document).ready(function(){
+    	var t = "m";
+
+	    var prmstr = window.location.search.substr(1);
+		var prmarr = prmstr.split ("&");
+		var params = {};
+
+		for ( var i = 0; i < prmarr.length; i++) {
+			var tmparr = prmarr[i].split("=");
+			params[tmparr[0]] = tmparr[1];
+		}
+		var token = params.token;
+		var GameId = params.gameId;
+		var type = params.type;
+		if (type=="m"){
+			var ids = params.ids;
+			$.ajax({
+	    	    type: "GET",
+	    	    url: "create_receiver",
+	    	    data: {
+	    	    	sessionToken: token,
+					gameId: GameId,
+					type: "m",
+					ids: ids
+	    	         },
+	    	    success: function(data){
+					}
+	    	});
+		}
+		$.ajax({
+    	    type: "GET",
+    	    url: "products",
+    	    data: {
+    	    	 sessionToken: token,
+				 gameId: GameId
+    	         },
+    	    success: function(data){
+    	    	//alert(data);
+    	    	var arr = JSON.parse(data);
+				for ( var i = 0; i < arr.length; i++) {
+					if (arr[i].name == "My Wish List"){
+						var products  = arr[i].items;
+						var prod_arr = JSON.parse(JSON.stringify(products));
+						//alert(prod_arr);
+						var prod_string = "";
+						for ( var j = 0; j < prod_arr.length; j++) {
+							prod_string = prod_string + prod_arr[j].id + ",";
+							}
+						$.ajax({
+				    	    type: "GET",
+				    	    url: "product_images",
+				    	    data: {
+				    	    	sessionToken: token,
+				    	    	prod_string: prod_string
+				    	         },
+				    	    success: function(data){
+				    	    	var arr1 = JSON.parse(data);
+								for ( var k = 0; k < arr1.length; k++) {
+									var img = $('<img/>', {src:arr1[k].imageUrl, height:"100" ,width:"100", "name": arr1[k].id});
+									img.addClass("images");
+									img.attr("status","Choose");
+									$("#page0").append(img);
+									}
+								}
+				    		});
+						}
+					if (arr[i].name == "My Things"){
+						var products  = arr[i].items;
+						var prod_arr = JSON.parse(JSON.stringify(products));
+						var prod_string = "";
+						for ( var j = 0; j < prod_arr.length; j++) {
+							prod_string = prod_string + prod_arr[j].id + ",";
+							}
+						$.ajax({
+				    	    type: "GET",
+				    	    url: "product_images",
+				    	    data: {
+				    	    	sessionToken: token,
+				    	    	prod_string: prod_string
+				    	         },
+				    	    success: function(data){
+				    	    	var arr1 = JSON.parse(data);
+								for ( var k = 0; k < arr1.length; k++) {
+									var img = $('<img/>', {src:arr1[k].imageUrl, height:"100" ,width:"100", "name": arr1[k].id});
+									img.addClass("images");
+									img.attr("status","Choose");
+									$("#page1").append(img);
+									}
+								}
+				    		});
+						}
+					if (arr[i].name == "Things I like"){
+						var products  = arr[i].items;
+						var prod_arr = JSON.parse(JSON.stringify(products));
+						var prod_string = "";
+						for ( var j = 0; j < prod_arr.length; j++) {
+							prod_string = prod_string + prod_arr[j].id + ",";
+							}
+						$.ajax({
+				    	    type: "GET",
+				    	    url: "product_images",
+				    	    data: {
+				    	    	sessionToken: token,
+				    	    	prod_string: prod_string
+				    	         },
+				    	    success: function(data){
+				    	    	var arr1 = JSON.parse(data);
+								for ( var k = 0; k < arr1.length; k++) {
+									var img = $('<img/>', {src:arr1[k].imageUrl, height:"100" ,width:"100", "name": arr1[k].id});
+									img.addClass("images");
+									img.attr("status","Choose");
+									$("#page2").append(img);		
+									}
+								}
+				    		});
+						}
+					}
+				}
+    		});
+		var products_chosen = "";
+		var num_of_clicks = 0;
+		$('.images').live('click', function(){
+			var id_product = $(this).attr("name");
+			if ($(this).attr("status")=="Choose"){
+				if (num_of_clicks < 5) {
+					$(this).attr("status","Choosed");
+					products_chosen = products_chosen + id_product + ",";
+					num_of_clicks = num_of_clicks + 1;
+					$('#item_counter').html(num_of_clicks);
+					$(this).css('border', "solid 6px #bf3f3e");
+					$(this).css('height', "88");
+					$(this).css('width', "88");
+
+				}
+				else {
+					alert("You can select only 5 products");
+				}
+			}
+			else {
+    			$(this).attr("status","Choose");
+				products_chosen=products_chosen.replace(id_product+",","");
+				num_of_clicks = num_of_clicks - 1;
+				$('#item_counter').html(num_of_clicks);
+				$(this).css('border', "solid 0px #bf3f3e");
+				$(this).css('height', "100");
+				$(this).css('width', "100");
+
+				//alert(products_chosen);
+    		}
+		});
+		$("#next_btn").click(function () { 
+			if (num_of_clicks == 5){
+				window.location = "sender8.html?gameId="+GameId + "&token=" + token + "&products_chosen=" + products_chosen;
+			}
+			else {
+				alert("Please select 5 products");
+			}
+			});
+		$("#back_btn").click(function () { 
+			window.location = "sender1.html?token=" + token;
+			});
+     });
+   </script>
+   <br>
+         <g id="item_counter">0 </g><f>  Of 5 Selected</f>
+ </body>
+	<div id="footer">
+	<p><img class="middle" SRC="graphics/FooterLogo.png"> <a>Who knows me better 2012 - All rights reserved 2012</a></p>
+	</div>
+ </html>

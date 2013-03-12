@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.5" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	
+	<servlet>
+		<servlet-name>Landing</servlet-name>
+		<servlet-class>wkmb.LandingServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Landing</servlet-name>
+		<url-pattern>/landing</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+	
+	<servlet>
+		<servlet-name>Login</servlet-name>
+		<servlet-class>wkmb.LoginServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Login</servlet-name>
+		<url-pattern>/login</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>login-sign</welcome-file>
+	</welcome-file-list>
+	
+	
+	
+	<servlet>
+		<servlet-name>PostLogin</servlet-name>
+		<servlet-class>wkmb.PostLoginServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PostLogin</servlet-name>
+		<url-pattern>/post-login</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>index2.html</welcome-file>
+	</welcome-file-list>
+	
+	
+	<servlet>
+		<servlet-name>SignUp</servlet-name>
+		<servlet-class>wkmb.SignUpServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SignUp</servlet-name>
+		<url-pattern>/sign-up</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>login-sign</welcome-file>
+	</welcome-file-list>
+
+	<servlet>
+		<servlet-name>AppPageServlet</servlet-name>
+		<servlet-class>wkmb.AppPageServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AppPageServlet</servlet-name>
+		<url-pattern>/myapp</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>sender1.html</welcome-file>
+	</welcome-file-list>
+	
+	<servlet>
+	<servlet-name>CronDelServlet</servlet-name>
+	<servlet-class>wkmb.cron.CronDelServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name>CronDelServlet</servlet-name>
+	<url-pattern>/cron/cleargames</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+	<servlet-name>CronAlgorithmServlet</servlet-name>
+	<servlet-class>wkmb.cron.CronAlgorithmServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name>CronAlgorithmServlet</servlet-name>
+	<url-pattern>/cron/algorithm</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>GameCreateServlet</servlet-name>
+		<servlet-class>wkmb.GameCreateServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GameCreateServlet</servlet-name>
+		<url-pattern>/create</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>sender3.html</welcome-file>
+	</welcome-file-list>
+	
+	<servlet>
+	    <servlet-name>MyFollowersServlet</servlet-name>
+	    <servlet-class>wkmb.MyFollowersServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>MyFollowersServlet</servlet-name>
+	    <url-pattern>/my_followers</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+	    <welcome-file>sender5.html</welcome-file>
+	</welcome-file-list>
+
+	<servlet>
+	    <servlet-name>MyFollowedByServlet</servlet-name>
+	    <servlet-class>wkmb.MyFollowedByServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>MyFollowedByServlet</servlet-name>
+	    <url-pattern>/my_follwed_by</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+	    <welcome-file>sender5.html</welcome-file>
+	</welcome-file-list>
+	
+	<servlet>
+		<servlet-name>GameReceiversServlet</servlet-name>
+		<servlet-class>wkmb.GameReceiversServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GameReceiversServlet</servlet-name>
+		<url-pattern>/create_receiver</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>sender3_a.html</welcome-file>
+	</welcome-file-list>
+	
+	<servlet>
+		<servlet-name>CatalogsProductsServlet</servlet-name>
+		<servlet-class>wkmb.CatalogsProductsServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CatalogsProductsServlet</servlet-name>
+		<url-pattern>/products</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>sender7.html</welcome-file>
+	</welcome-file-list>
+	
+	<servlet>
+		<servlet-name>ProductsServlet</servlet-name>
+		<servlet-class>wkmb.ProductsServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ProductsServlet</servlet-name>
+		<url-pattern>/product_images</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>sender7.html</welcome-file>
+		<welcome-file>sender6.html</welcome-file>
+	</welcome-file-list>
+	
+	<servlet>
+		<servlet-name>GameProductsServlet</servlet-name>
+		<servlet-class>wkmb.GameProductsServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GameProductsServlet</servlet-name>
+		<url-pattern>/product_create</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>sender8.html</welcome-file>
+	</welcome-file-list>
+	
+	<servlet>
+		<servlet-name>SendGameServlet</servlet-name>
+		<servlet-class>wkmb.SendGameServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SendGameServlet</servlet-name>
+		<url-pattern>/send_game</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>sender8.html</welcome-file>
+	</welcome-file-list>
+	
+	<servlet>
+		<servlet-name>ShowScoreServlet</servlet-name>
+		<servlet-class>wkmb.ShowScoreServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ShowScoreServlet</servlet-name>
+		<url-pattern>/show_score</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>sender2.html</welcome-file>
+	</welcome-file-list>
+
+	<servlet>
+		<servlet-name>ReceivedGamesServlet</servlet-name>
+		<servlet-class>wkmb.ReceivedGamesServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ReceivedGamesServlet</servlet-name>
+		<url-pattern>/received_games</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>sender2.html</welcome-file>
+	</welcome-file-list>
+	
+	<servlet>
+		<servlet-name>ShowReceiversImagesServlet</servlet-name>
+		<servlet-class>wkmb.ShowReceiversImagesServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ShowReceiversImagesServlet</servlet-name>
+		<url-pattern>/receivers_images</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>sender2.html</welcome-file>
+	</welcome-file-list>
+	
+	<servlet>
+		<servlet-name>ShowSendersImagesServlet</servlet-name>
+		<servlet-class>wkmb.ShowSendersImagesServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ShowSendersImagesServlet</servlet-name>
+		<url-pattern>/senders_images</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>sender2.html</welcome-file>
+	</welcome-file-list>
+	
+	
+	<servlet>
+		<servlet-name>ShowFinishedGamesServlet</servlet-name>
+		<servlet-class>wkmb.ShowFinishedGamesServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ShowFinishedGamesServlet</servlet-name>
+		<url-pattern>/show_finished_games</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>sender2.html</welcome-file>
+	</welcome-file-list>
+	
+	
+	<servlet>
+		<servlet-name>CatalogsProductsGuessServlet</servlet-name>
+		<servlet-class>wkmb.CatalogsProductsGuessServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CatalogsProductsGuessServlet</servlet-name>
+		<url-pattern>/products_guess</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>sender4.html</welcome-file>
+	</welcome-file-list>
+	
+	<servlet>
+		<servlet-name>CheckGuessServlet</servlet-name>
+		<servlet-class>wkmb.CheckGuessServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CheckGuessServlet</servlet-name>
+		<url-pattern>/check_guess</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>sender6.html</welcome-file>
+	</welcome-file-list>
+ <servlet>
+  <servlet-name>SystemServiceServlet</servlet-name>
+  <servlet-class>com.google.api.server.spi.SystemServiceServlet</servlet-class>
+  <init-param>
+   <param-name>services</param-name>
+   <param-value/>
+  </init-param>
+ </servlet>
+ <servlet-mapping>
+  <servlet-name>SystemServiceServlet</servlet-name>
+  <url-pattern>/_ah/spi/*</url-pattern>
+ </servlet-mapping>
+ 
+
+</web-app>

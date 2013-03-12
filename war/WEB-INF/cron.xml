@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cronentries>
+<cron>
+<url>/cron/cleargames</url>
+<description>Delete corrupted games from the database</description>
+<schedule>every day 00:00</schedule>
+</cron>
+<cron>
+<url>/cron/algorithm</url>
+<description>Perform algorithm calculations</description>
+<schedule>every monday 01:00</schedule>
+</cron>
+</cronentries>

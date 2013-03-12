@@ -1,0 +1,471 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ 
+<style>
+html, body {
+    margin:0 auto;
+    width:1000px;
+	height:550px;
+	background:#E9E7E3;
+}  
+
+/* tab styles */
+#tabrow {
+min-width:800px;
+font-size:16px;
+letter-spacing:0.3pt;
+line-height:1;
+height:30px;
+font-family: Trebuchet MS, sans-serif;
+text-transform: capitalize;
+text-align:center;
+margin:auto;
+padding:auto;
+vertical-align:middle;
+position:relative;
+}
+
+#tabrow ul {
+  margin:0;
+  padding:0;
+  list-style:none;
+  z-index:2;
+  position:relative;
+  margin-right:auto;
+  margin-left:auto;
+  text-align:center;
+  padding:0px;
+  vertical-align:middle;
+  position:relative;
+}
+
+#tabrow li {
+  float:left;
+  background-color:#494949;
+  color:#a6a49d;
+  margin-right:2px;
+  padding:5px;
+  cursor:pointer;
+  text-align:center;
+  height:20px;
+  width:172px;
+  padding:auto;
+  vertical-align:middle;
+  position:relative;
+  float: left; 
+}
+
+#tabrow li.select {
+  background-color:#bf3f3e;
+  color:#ffffff;
+  height:20px;
+  width:172px;
+  padding:auto;
+  vertical-align:middle;
+  position:relative;
+  
+}
+#tabrow li.select:after{ 
+content:'';
+display:block;
+position:absolute;
+top:100%; 
+left:80px;
+width:0;
+height:0;
+border-color: #bf3f3e transparent transparent transparent; 
+border-style: solid;
+border-width: 10px;
+}
+
+/* page styles */
+#topbox{,
+   margin: 0 auto;
+   width:97%;
+}
+#topbox {
+  background-color:#FFF1C7;
+  border: solid #C36618 1px;
+  margin-bottom:2em;
+}
+#midbox {
+  width:100%;
+  height:255px;
+  margin-top: 16px;
+  background-color:#494949;
+  overflow: auto;
+  scrollbar-base-color: #bf3f3e;
+  scrollbar-arrow-color: #000000;
+  position: absolute;
+}
+#midbox p {
+  margin:0;
+}
+h1 {
+  font-size:x-large;
+  color:#d18846;
+}
+h2 {
+  color:#000;
+  font-size:large;
+  font-family: Trebuchet MS, sans-serif;;
+}
+h1, #topbox h2 {
+  margin:0 15pt;
+  padding: 5pt 0;
+}
+
+div.subpage {
+	padding:1em;
+}
+
+.title{
+font-family: Trebuchet MS, sans-serif;
+font-size: 34px;
+color: #ffffff;
+padding-bottom:2px;
+}
+
+#footer {
+	padding: 63px 0px 30px 0px;
+	position: relative;
+    bottom:0;
+    height:60px;   /* Height of the footer */
+}
+#footer p {
+    padding: 0px 0px 0px 50px;
+	text-align: left;
+	font-size: 10px;
+	font-family: Trebuchet MS, sans-serif;
+}
+#footer a {
+	margin-left:10px;
+}
+
+img.middle {vertical-align:-10px;}
+img.middle2{vertical-align:-2px;}
+
+#tab0 {
+	margin-top:20px;
+	margin-left:160px;
+}
+#tab1 {
+	margin-top:20px;
+}
+
+img.floatLeft { 
+position:absolute;
+margin:40px 0px 0px 40px;
+}
+
+#buttons{
+background: url('graphics/LeftNameBar.png'), url('graphics/RightNameBar.png');
+background-size:500px 100px;
+width:75%;
+height:345px;
+padding: 10px 0px 0px 0px;
+margin-left:270px;
+margin-right:auto;
+vertical-align:center;
+position:relative;
+}
+
+.rightbutton {
+  font-family: Trebuchet MS, sans-serif;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 0px;
+  text-transform: capitalize;
+  text-align: top;
+  text-decoration: none;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-box-shadow: 1px 1px 3px #000000;
+  -moz-box-shadow: 1px 1px 3px #000000;
+  text-shadow: 0px 0px 0px #000000;
+  border: solid #003366 0px;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#bf3f3e), to(#b53837));
+  background: -moz-linear-gradient(top, #bf3f3e, #b53837);
+  height:39px;
+  width:200px;
+  font-weight: bold;
+  vertical-align:middle;
+  float: right; 
+  position:relative;
+  margin: 45px 250px 0px 0px;
+  cursor: pointer;
+  box-shadow:2px 2px 3px #0D0000;
+}
+.rightbutton:active {
+position: relative;
+top: 1px;
+left: 1px;
+}
+
+.images {
+margin : 5px;
+}
+
+#pop-up {
+display: none;
+  margin-left: 10px;
+  position: absolute;
+  width: 65px;
+  height: 42px;
+  padding: 10px;
+  background: #bf3f3e;
+  border: 1px solid #bf3f3e;
+  cursor: pointer;
+}
+#pop-up:after{ 
+content:'';
+display:block;
+position:absolute;
+top:10%; 
+left:-11px;
+border-color: transparent #bf3f3e ;
+border-style: solid;
+border-width: 10px 10px 10px 0px;
+height: 0px;
+width: 0px;
+}
+e {
+ font-family: Trebuchet MS, sans-serif;
+ color: white ;
+ font-size: 17px;
+}
+c {
+ font-family: Trebuchet MS, sans-serif;
+ color: #ffffff;
+ vertical-align:50px;
+ margin-left: 30px;
+ font-size: 25px;
+}
+
+#back {
+    padding:45px 0px 32px 0px;
+	}
+
+#back p:active{
+position:relative;
+top: 1px;
+left: 1px;
+}
+
+#back p.p1{
+    float:left;
+    position:relative;
+	margin:0px -50px 0px 878px;
+	font-size: 16px;
+	font-family: Trebuchet MS, sans-serif;
+	text-transform: capitalize;
+}
+
+#back p.p2{
+    float:right;
+	position:relative;
+	margin:0px -22px 0px 0px;
+	font-size: 16px;
+	font-family: Trebuchet MS, sans-serif;
+	text-transform: capitalize;
+}
+
+#back a {
+	margin-left:15px;
+	cursor: pointer;
+}
+
+#back b.b1 {
+	margin-left:15px;
+	cursor: pointer;
+}
+
+#back b.b2 {
+	margin-right:15px;
+	cursor: pointer;
+}
+
+.title2{
+font-family: Trebuchet MS, sans-serif;
+font-size: 24px;
+color: #ffffff;
+}
+
+d {
+ font-family: Trebuchet MS, sans-serif;
+ color: #ffcd8b;
+ font-size: 24px;
+ float:left;
+ padding-top:40px;
+}
+
+k {
+ font-family: Trebuchet MS, sans-serif;
+ color: #ffcd8b;
+ font-size: 34px;
+}
+</style>
+
+<script type="text/javascript" src="source1.html"> </script>
+<script type="text/javascript">
+var selectedTab = 0;
+
+function tabclick(n) {
+  if (n === selectedTab) return; // nothing to do.
+  var li = document.getElementById('tab' + selectedTab);
+  curvyCorners.adjust(li, 'className', ''); // Remove the 'select' style
+  li = document.getElementById('page' + selectedTab);
+  li.style.display = 'none';                // hide the currently selected sub-page
+  li = document.getElementById('page' + n);
+  li.style.display = 'block';               // show the new sub-page
+  li = document.getElementById('tab' + n);  // get the new (clicked) tab
+  curvyCorners.adjust(li, 'className', 'select'); // and update its style
+  curvyCorners.redraw();        // Redraw all elements with className curvyRedraw
+  selectedTab = n;              // store for future reference
+}
+</script>
+
+
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+ </head>
+
+<body bgcolor="#E9E7E3">
+   <div id="back">
+	    <p class="p1" id="back_btn"><a><img  class="middle2" SRC="graphics/arrow.png"><b class="b1">Back To Main</b></a></p>
+   </div>
+   <div id="title">
+   <img class="floatLeft" SRC="graphics/Logo_internalPages.png">
+   </div>
+   
+    <div id="buttons">
+    	<CENTER><div class="title"><span id="coins">You earned </span> coins <span id="right">and guessed right </span> !</div></CENTER>
+		<CENTER><div><span class="title2" id="excel">Well done, you guessed all the products right!</span></div></CENTER>
+		<CENTER><div><span class="title2" id="bad">You should get to know your friend a little better!</span></div></CENTER>
+		<div id="midbox" class="curvyRedraw">
+		<div id="page0" class="subpage">
+		</div>
+		</div>
+	</div>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+   <script>
+    $(document).ready(function(){
+		//$("#coins").hide();
+    	//$("#right").hide();
+		$("#excel").hide();
+		$("#bad").hide();
+		var prmstr = window.location.search.substr(1);
+		var prmarr = prmstr.split ("&");
+		var params = {};
+
+		for ( var i = 0; i < prmarr.length; i++) {
+			var tmparr = prmarr[i].split("=");
+			params[tmparr[0]] = tmparr[1];
+		}
+		var token = params.token
+		var game_chosen = params.game_chosen;
+		var products_chosen = params.products_chosen;
+		$.ajax({
+    	    type: "GET",
+    	    url: "check_guess",
+    	    data: {
+    	    	sessionToken: token,
+    	    	game_chosen: game_chosen,
+    	    	products_chosen: products_chosen
+    	         },
+    	    success: function(data){
+				var params = data.split("|||");
+				var data1 = params[0];
+				$.ajax({
+					type: "GET",
+		    	    url: "product_images",
+		    	    data: {
+		    	    	sessionToken: token,
+		    	    	prod_string: data1
+		    	         },
+					success: function(data_a){
+						var arr1 = JSON.parse(data_a);
+						var len = arr1.length;
+						if (len>0) {
+							$("#page0").append('<d>' + "Right: " + '</d>');	
+							//$("#page0").append('<br>');	
+						}
+						for ( var k = 0; k < arr1.length; k++) {
+							var img = $('<img/>', {src:arr1[k].imageUrl, height:"100" ,width:"100", "url":arr1[k].productUrl});
+							img.addClass("images");
+							$("#page0").append(img);	
+							}
+						$("#page0").append('<br>');	
+						$("#right").append('<k>' + len + '</k>');
+						$("#right").append('<k>' + "/5" + '</k>');
+						$("#right").show();
+						var score = len*20;
+						$("#coins").append('<k>' + score + '</k>');
+						$("#coins").show();
+						if (score == 100){
+							$("#excel").show();
+							}
+						else {
+						    $("#bad").show();
+						    }
+						}
+					});
+				var data2 = params[1];
+				$.ajax({
+					type: "GET",
+		    	    url: "product_images",
+		    	    data: {
+		    	    	sessionToken: token,
+		    	    	prod_string: data2
+		    	         },
+					success: function(data_b){
+						var arr2 = JSON.parse(data_b);
+						var len2 = arr2.length;
+						if (len2>0) {
+							$("#page0").append('<d>' + "Wrong: " + '</d>');	
+							//$("#page0").append('<br>');	
+						}
+						for ( var k = 0; k < arr2.length; k++) {
+							var img = $('<img/>', {src:arr2[k].imageUrl, height:"100" ,width:"100", "url":arr2[k].productUrl});
+							img.addClass("images");
+							$("#page0").append(img);
+							}
+						
+						}
+					});
+				}
+    		});
+		var prod_url = "";
+		$('.images').live('hover', function(e){ 
+			var img = $(this)
+			prod_url = img.attr("url")
+			var xPos = img.offset().left + img.width();
+			var yPos = img.offset().top;
+		    $('#pop-up').show()
+				.css('top', yPos)
+			    .css('left',xPos)
+		        .appendTo('body');
+		  });
+
+		$('#pop-up').mouseleave(function() {
+			 $('#pop-up').hide();
+			});
+		$("#pop-up").live('click', function(){ 
+			window.open('http://galileo.shopyourway.com' + prod_url);
+			});
+		$("#back_btn").click(function () { 
+			window.location = "sender1.html?token=" + token;
+			});
+     });
+   </script>
+   	<div id="footer">
+	<p><img class="middle" SRC="graphics/FooterLogo.png"> <a>Who knows me better 2012 - All rights reserved 2012</a></p>
+	</div>
+   <div id="pop-up">
+     <center><e>More details</e></center>
+   </div> 
+</body>
+</html>
+
+
